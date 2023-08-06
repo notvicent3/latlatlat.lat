@@ -32,6 +32,37 @@ class MainGUI:
 
         # Puedes agregar más elementos y marcos para las otras funcionalidades
 
+     def setup_ui(self):
+        # ... [código previo para el chatbot]
+
+        # Marco para Generación de Contenido
+        content_frame = ttk.LabelFrame(self.root, text="Generación de Contenido")
+        content_frame.pack(fill="both", expand=True, padx=10, pady=10)
+
+        self.content_type = ttk.Combobox(content_frame, values=["Resumen", "Análisis", "Descripción"])
+        self.content_type.pack(fill="x", padx=10, pady=5)
+        self.content_type.set("Selecciona el tipo de contenido")
+
+        self.data_input = Text(content_frame, wrap='word')
+        self.data_input.pack(fill="both", expand=True, padx=10, pady=5)
+
+        generate_button = Button(content_frame, text="Generar", command=self.generate_content)
+        generate_button.pack(padx=10, pady=5)
+
+        self.generated_content = Text(content_frame, wrap='word', state='disabled')
+        self.generated_content.pack(fill="both", expand=True, padx=10, pady=5)
+
+    def generate_content(self):
+        data = self.data_input.get("1.0", "end-1c")
+        content_type = self.content_type.get()
+
+        generated_text = self.generacion_contenido.generar_informe(data, content_type)
+
+        self.generated_content.configure(state='normal')
+        self.generated_content.delete("1.0", "end")
+        self.generated_content.insert("1.0", generated_text)
+        self.generated_content.configure(state='disabled')
+
     def send_message(self, event=None):
         user_message = self.user_input.get()
         self.append_to_chat(f"Usuario: {user_message}")
@@ -46,6 +77,8 @@ class MainGUI:
         self.chat_log.insert('end', message + '\n')
         self.chat_log.configure(state='disabled')
         self.chat_log.yview('end')
+
+ # Puedes agregar más elementos y marcos para las otras funcionalidades
 
 if __name__ == "__main__":
     root = tk.Tk()
