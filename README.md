@@ -1,3 +1,7 @@
+Of course! Let's seamlessly weave the directory and module structure into the `README.md` to provide a comprehensive overview of the project's architecture and layout.
+
+---
+
 # 🌐 LATLATLAT.LAT 🤖
 
 LATLATLAT.LAT is a trailblazing platform harnessing the might of AI to deliver a spectrum of functionalities, from content generation to advanced text analytics.
@@ -6,6 +10,7 @@ LATLATLAT.LAT is a trailblazing platform harnessing the might of AI to deliver a
 
 - [About the Project](#about-the-project)
 - [Architectural Overview](#architectural-overview)
+- [Directory & Module Structure](#directory--module-structure)
 - [Key Features](#key-features)
 - [Technologies](#technologies)
 - [Getting Started](#getting-started)
@@ -48,6 +53,64 @@ LATLATLAT.LAT is built as a modular and extensible system that leverages the pow
 5. **Extensions & Plugins**:
     - **Concept**: Enhance and expand the core functionalities of the platform.
     - **Technologies**: Python-based plugins to integrate additional tools or services.
+
+# 📂 LATLATLAT.LAT Directory & Module Structure 📚
+
+The LATLATLAT.LAT system follows a modular approach, encapsulating distinct responsibilities within dedicated layers and folders. This structure promotes maintainability, scalability, and clarity.
+
+## 📁 Root Directory
+
+This is where the main application file `lat.py` resides, along with configuration files, and the primary folders for various modules.
+
+- `lat.py`: The main entry point for the application.
+- `.gitignore`: Specifies which files and directories to ignore in git.
+- `LICENSE`: Contains the licensing information for the project.
+- `README.md`: The markdown file containing detailed information about the project.
+
+## 📁 `gui/`
+
+This directory houses the code related to the Graphical User Interface (GUI).
+
+- **`main_gui.py`**: Contains the primary user interface code. Utilizes Tkinter to offer an interactive experience.
+  
+## 📁 `core/`
+
+Central functionalities and logic reside here.
+
+- **`labrar.py`**: Manages agent deployment for specific user-indicated purposes.
+- **`sembrar.py`**: Establishes a continuous flow of information between web scraping agents and the database.
+- **`regar.py`**: Processes the data flow using the combined power of the database and TensorFlow.
+- **`cosechar.py`**: Transports processed data to storage.
+- **`transportar.py`**: Handles data transportation logistics.
+- **`procesar.py`**: Processes data and interacts with the AI models.
+- **`productofinal.py`**: Manages the display of final results to the user.
+
+## 📁 `data/`
+
+All data handling, management, and persistence functionalities are here.
+
+- **`almacenar.py`**: Manages the storage of data. Interacts with the PostgreSQL database using SQLAlchemy.
+  
+## 📁 `automl/`
+
+This directory focuses on advanced analytics and automated machine learning.
+
+- **`auto_analytics.py`**: Integrates scikit-learn and AutoKeras functionalities for data analytics and AutoML.
+
+## 📁 `plugins/`
+
+Extendable features and additional functionalities are placed here. This folder can host a variety of Python-based plugins that augment the system's basic capabilities.
+
+## 📁 `config/`
+
+Contains configuration files and settings, crucial for the system's operation.
+
+- **`openai_config.py`**: Stores settings related to OpenAI, like API tokens and model preferences.
+- **`db_config.py`**: Configuration settings for database connections and operations.
+
+## 📁 `assets/`
+
+Holds static files like images, icons, or other resources necessary for the application's appearance and user experience.
 
 ## 🚀 Key Features
 
