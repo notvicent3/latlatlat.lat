@@ -52,6 +52,31 @@ class MainGUI:
         self.generated_content = Text(content_frame, wrap='word', state='disabled')
         self.generated_content.pack(fill="both", expand=True, padx=10, pady=5)
 
+ # Marco para Análisis de Texto
+        analysis_frame = ttk.LabelFrame(self.root, text="Análisis de Texto")
+        analysis_frame.pack(fill="both", expand=True, padx=10, pady=10)
+
+        self.analysis_input = Text(analysis_frame, wrap='word')
+        self.analysis_input.pack(fill="both", expand=True, padx=10, pady=5)
+
+        analyze_button = Button(analysis_frame, text="Analizar", command=self.analyze_text)
+        analyze_button.pack(padx=10, pady=5)
+
+        self.analysis_output = Text(analysis_frame, wrap='word', state='disabled')
+        self.analysis_output.pack(fill="both", expand=True, padx=10, pady=5)
+
+    def analyze_text(self):
+        text = self.analysis_input.get("1.0", "end-1c")
+        sentiment = self.analisis_texto.analizar_sentimiento(text)
+        category = self.analisis_texto.categorizar_comentario(text)
+
+        analysis_result = f"Sentimiento: {sentiment}\nCategoría: {category}"
+
+        self.analysis_output.configure(state='normal')
+        self.analysis_output.delete("1.0", "end")
+        self.analysis_output.insert("1.0", analysis_result)
+        self.analysis_output.configure(state='disabled')
+
     def generate_content(self):
         data = self.data_input.get("1.0", "end-1c")
         content_type = self.content_type.get()
