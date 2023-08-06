@@ -1,2 +1,9 @@
-# Aquí puedes implementar un chatbot básico usando Rasa o similar
-# También puedes añadir funcionalidades de notificación usando la librería plyer
+from .openai_integration import OpenAIIntegration
+
+class Interaccion:
+    def __init__(self):
+        self.openai = OpenAIIntegration()
+
+    def respuesta_chatbot(self, pregunta_usuario):
+        prompt = f"Usuario: {pregunta_usuario}\nAsistente:"
+        return self.openai.generate_text(prompt)
