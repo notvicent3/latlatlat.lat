@@ -1,0 +1,6 @@
+beautifulsoup4
+requests
+pandas
+textblob
+sqlalchemy
+# Y cualquier otra librería que decidas utilizar
