@@ -3,4 +3,5 @@ requests
 pandas
 textblob
 sqlalchemy
+openai
 # Y cualquier otra librería que decidas utilizar
