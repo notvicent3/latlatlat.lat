@@ -1,4 +1,4 @@
-Of course! Let's seamlessly weave the directory and module structure into the `README.md` to provide a comprehensive overview of the project's architecture and layout.
+Welcome to our `README.md` created to provide a comprehensive overview of the project's architecture and layout.
 
 ---
 
