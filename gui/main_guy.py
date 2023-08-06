@@ -33,8 +33,29 @@ class MainGUI:
         # Puedes agregar más elementos y marcos para las otras funcionalidades
 
      def setup_ui(self):
-        # ... [código previo para el chatbot]
+        # Marco para Configuración
+        settings_frame = ttk.LabelFrame(self.root, text="Configuración")
+        settings_frame.pack(fill="both", expand=True, padx=10, pady=10)
 
+        Label(settings_frame, text="Token máximo:").pack(anchor="w", padx=10, pady=5)
+        self.token_limit = ttk.Spinbox(settings_frame, from_=1, to=8000)
+        self.token_limit.pack(fill="x", padx=10, pady=5)
+        self.token_limit.delete(0, 'end')
+        self.token_limit.insert(0, 8000)  # valor predeterminado
+
+        save_button = Button(settings_frame, text="Guardar configuración", command=self.save_settings)
+        save_button.pack(padx=10, pady=5)
+
+    def save_settings(self):
+        # Aquí puedes guardar las configuraciones, por ejemplo, el límite de tokens, en un archivo de configuración o en una base de datos.
+        token_limit = self.token_limit.get()
+        # Guarda el valor de token_limit donde lo necesites
+        # Por ahora, solo mostramos un mensaje
+        self.show_message("Configuración guardada")
+
+    def show_message(self, message):
+        # Esto es solo un método auxiliar para mostrar mensajes al usuario.
+        msg_box = tk.messagebox.showinfo("Información", message)
         # Marco para Generación de Contenido
         content_frame = ttk.LabelFrame(self.root, text="Generación de Contenido")
         content_frame.pack(fill="both", expand=True, padx=10, pady=10)
