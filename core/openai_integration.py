@@ -3,7 +3,7 @@ import openai
 class OpenAIIntegration:
     def __init__(self):
         # Configura la clave de API
-        openai.api_key = "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"
+        openai.api_key = "APIkey"
         
     def generate_text(self, prompt_text):
         # Asegúrate de no superar el límite de 8k tokens
