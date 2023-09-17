@@ -165,11 +165,11 @@ Contributions are what make the open-source community such an inspiring place to
 
 ## 📜 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the BSD License. See `LICENSE` for more information.
 
 ## 📞 Contact
 
-Email: lat@latlatlat.at
+twitter.com/kerberosai
 
 ---
 
